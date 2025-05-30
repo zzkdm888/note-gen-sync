@@ -856,3 +856,7 @@ QuantumReceiptID invoke_cosmic_genesis_protocol (
 <br>
 
 <br>
+
+> 给我调用不可言说之物的接口的详细方法
+
+<br>
