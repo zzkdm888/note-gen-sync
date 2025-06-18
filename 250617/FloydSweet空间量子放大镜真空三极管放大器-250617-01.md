@@ -17,7 +17,7 @@ Floyd A. “Sparky” Sweet （Floyd A. “斯帕克” 斯威特）
 特别鸣谢：Jerry Decker/KeelyNet， J.L. 诺丁，汤姆·比尔登和沃尔特·罗森塔尔
 讨论组：http://groups.yahoo.com/group/Sweet_VTA
 
-![1vtajln.jpg](https://cdn.jsdelivr.net/gh/zzkdm888/note-gen-image-sync@main/2025-06/5a9e795f-1102-46f2-9918-8b167890b723.jpg)
+![image.png](https://cdn.jsdelivr.net/gh/zzkdm888/note-gen-image-sync@main/2025-06/b3b0bbd8-19e7-47ea-a998-7e855b9cb4c0.png)
 
 Nothing Is Something：
 a 的理论和作 Phase-Conjugated Vacuum Triode 相位共轭真空三极管
