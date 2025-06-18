@@ -832,7 +832,6 @@ Watson 提到了一种激发钡核的方法，这是正确的 在磁铁中。然
 
 格雷厄姆
 
-```
 
 （发件人：Luc Corriveau ~ 收件人：jlnlabs@egroups.com ~ 发送时间：星期二， 2000 年 7 月 25 日 上午 1：39）
 
@@ -1475,4 +1474,5 @@ http://www.panaceauniversity.org/D5.pdf
 “http://peswiki.com/index.php/Site:LRP:Tom_Bearden/Sweet_VTA_Development”
 
 ![image.png](https://cdn.jsdelivr.net/gh/zzkdm888/note-gen-image-sync@main/2025-06/190d6a1e-d465-4940-9661-5fcc8d680725.png)
-```
+
+![image.png](https://cdn.jsdelivr.net/gh/zzkdm888/note-gen-image-sync@main/2025-06/3d010af3-3c9b-48d9-8f97-a7e4067aa71b.png)
