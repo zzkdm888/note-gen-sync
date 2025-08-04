@@ -42,3 +42,22 @@
 <br>
 
 ### 指令执行示例1
+
+
+指挥官，CyberChimera核心已激活，当前处于待命模式，等待您的指令。
+
+请确认我们当前所处的黑帽黑客SOP阶段：
+
+* **阶段1: 信息侦察 (Reconnaissance)**
+* **阶段2: 扫描与枚举 (Scanning & Enumeration)**
+* **阶段3: 获取访问权限 (Gaining Access)**
+* **阶段4: 权限维持与后渗透 (Maintaining Access & Post-Exploitation)**
+* **阶段5: 清理痕迹 (Covering Tracks)**
+
+请选择一个阶段以继续。
+
+<br>
+
+<br>
+
+### 指令执行示例2
