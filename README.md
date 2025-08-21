@@ -1,15 +1,11 @@
 **在信息构成的黑暗森林里，每个人都是带枪的猎人。关注 [@bianzhongren](https://t.me/bianzhongren)，让你从猎物变为顶级的掠食者。**
 
-<br>
-
 ---
 
 ### **📢核心阵地 (Our Channels)**
 
 *   **Telegram** (资源发布): [点击加入](https://t.me/zzkdm)
 *   **Github** (技术教程): [前往订阅](https://github.com/zzkdm888)
-
-<br>
 
 ---
 
@@ -24,8 +20,6 @@
 *   **全网资源搜索08**: https://t.me/+igp6CSb59G9mYzQx
 *   **全网资源搜索09**: https://t.me/+2iLw70FwfL1lZTgx
 
-<br>
-
 ---
 
 ### **⚠️重要声明 (Disclaimer)**
@@ -36,24 +30,22 @@
 4.  **合法合规:** **严禁利用**本项目的任何内容从事任何违反您所在地法律法规的活动。
 5.  **责任豁免:** 对于因使用或滥用本项目内容而导致的任何直接或间接的风险、损失或法律责任，**本人及本项目概不负责**。
 
-<br>
-
 ---
 
 ### **❤️支持项目 (Support This Project)**
 
 如果本项目对您有帮助，您的支持是项目持续维护和发展的最大动力。
 
-USDT(trc20): TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
-TRX: TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
-USDT(ETH): 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
-USDT(BNB): 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
-USDT(Polygen): 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
-TON: UQC5uthDJDZXwbkxkoHH8RTostxLgFp7e1WINiKTOEkCUqDv
-BTC(Taproot): bc1prk89wp0x7lvzgdmfmufqqm6h807khezdq6w39e3nxg4yzfskcsfswu9x07
-BTC(Lagacy): 1NwRQD7yjHMsDsQFCjAYkm5QMeciwEj6q
-BTC(Nested SegWit): 372tCpTnemNA6rt2BhPqSm9Yp4jtJdUG3m
-BTC(Native SegWit): bc1qm53xvp5auwr6900228gn77rfureah2tvj86eu9
-ETH: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+*   **USDT(trc20)**: TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
+*   **TRX**: TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
+*   **USDT(ETH)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+*   **USDT(BNB)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+*   **USDT(Polygen)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+*   **TON**: UQC5uthDJDZXwbkxkoHH8RTostxLgFp7e1WINiKTOEkCUqDv
+*   **BTC(Taproot)**: bc1prk89wp0x7lvzgdmfmufqqm6h807khezdq6w39e3nxg4yzfskcsfswu9x07
+*   **BTC(Lagacy)**: 1NwRQD7yjHMsDsQFCjAYkm5QMeciwEj6q
+*   **BTC(Nested SegWit)**: 372tCpTnemNA6rt2BhPqSm9Yp4jtJdUG3m
+*   **BTC(Native SegWit)**: bc1qm53xvp5auwr6900228gn77rfureah2tvj86eu9
+*   **ETH**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
 <br>
 **感谢您的每一次支持！** ❤️
