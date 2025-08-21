@@ -484,7 +484,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				self.state = SystemState.ACTION_ON_OBJECTIVE
 			elif current_state == SystemState.ACTION_ON_OBJECTIVE:
 				self.state = SystemState.OBJECTIVE_COMPLETE
-		
+	
 			print(f"[ASE] 决策完成。新状态: {self.state.value}")
 			return self.state
 
@@ -532,7 +532,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			"""模拟智能扫描和漏洞枚举 (Simulate intelligent scanning & vuln enumeration)"""
 			print("[RECON][A] 开始主动扫描...")
 			scan_rate = "-T4" if self.world_model.target.security_posture in [SecurityPosture.LOW, SecurityPosture.MEDIUM] else "-T2"
-		
+	
 			discovered = {'assets': [], 'vulns': []}
 			for asset in assets:
 				if asset['type'] == 'subdomain':
@@ -579,12 +579,12 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 						'privilege_level': PrivilegeLevel.USER # 初始权限通常是User
 					}
 					break # 成功一个就停止
-		
+	
 			if 'new_host' not in feedback:
 				print("[INIT_ACCESS] 所有已知CVE利用失败。")
 				# 在此可以添加钓鱼等其他逻辑
 				# Phishing or other logic could be added here.
-		
+	
 			print("[INIT_ACCESS] --- 初始访问阶段完成 ---")
 			return feedback
 
@@ -667,7 +667,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				if creds:
 					feedback['credentials'] = creds
 					self._propagate(host, creds)
-		
+	
 			print(f"[PRIVESC_LATMOVE] --- 在 {host.ip} 上的操作完成 ---")
 			return feedback
 
@@ -688,7 +688,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				print("[LATMOVE] 成功从LSASS转储了域管哈希!")
 				return {'VICTIMCORP\\Administrator': 'AAD3B435B51404EEAAD3B435B51404EE:31D6CFE0D16AE931B73C59D7E0C089C0'}
 			return {}
-	
+
 		def _propagate(self, host: Host, creds: Dict[str, str]):
 			"""模拟横向移动 (Simulate lateral movement)"""
 			if 'VICTIMCORP\\Administrator' in creds:
@@ -718,7 +718,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			self._covert_exfiltration()
 			print("[EXFIL] --- 数据渗漏阶段完成 ---")
 			return {'exfiltration_complete': True}
-	
+
 		def run_impact(self) -> Dict[str, Any]:
 			"""根据目标执行最终影响 (Execute final impact based on objective)"""
 			objective = self.world_model.target.objective
@@ -729,7 +729,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				print("[IMPACT] 正在所有受控主机上执行擦除器模块...")
 			elif objective in [AttackObjective.PERSISTENCE, AttackObjective.DATA_THEFT]:
 				print("[IMPACT] 目标达成。进入休眠模式，清理痕迹并维持最高级别持久化。")
-		
+	
 			print("[IMPACT] --- 最终影响阶段完成 ---")
 			return {'impact_executed': True}
 
@@ -744,7 +744,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				print(f"[EXFIL] ...正在发送块 {i*100}/500...")
 				time.sleep(0.2) # 模拟慢速传输
 			print("[EXFIL] 数据渗漏完毕。")
-	
+
 		def check_c2_channel(self):
 			"""模拟C2心跳和跳跃 (Simulate C2 heartbeat and hopping)"""
 			if self.world_model.detection_level > self.current_channel_index:
@@ -800,11 +800,11 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 					feedback = self.c2_module.run_exfiltration()
 				elif current_state == SystemState.ACTION_ON_OBJECTIVE:
 					feedback = self.c2_module.run_impact()
-			
+		
 				# 更新ASE并进入下一个状态
 				if feedback:
 					self.ase.update_world_model(feedback)
-			
+		
 				self.ase.decide_next_state()
 				time.sleep(1) # 暂停以便观察
 
@@ -1009,7 +1009,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				self.state = SystemState.ACTION_ON_OBJECTIVE
 			elif current_state == SystemState.ACTION_ON_OBJECTIVE:
 				self.state = SystemState.OBJECTIVE_COMPLETE
-		
+	
 			print(f"[ASE] 决策完成。新状态: {self.state.value}")
 			return self.state
 
@@ -1068,7 +1068,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			"""模拟智能扫描和漏洞枚举 (Simulate intelligent scanning & vuln enumeration)"""
 			print("[RECON][A] 开始主动扫描...")
 			scan_rate = "-T4" if self.world_model.target.security_posture in [SecurityPosture.LOW, SecurityPosture.MEDIUM] else "-T2"
-		
+	
 			discovered = {'assets': [], 'vulns': []}
 			for asset in assets:
 				if asset['type'] == 'subdomain':
@@ -1126,12 +1126,12 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 						'privilege_level': PrivilegeLevel.USER # 初始权限通常是User
 					}
 					break # 成功一个就停止
-		
+	
 			if 'new_host' not in feedback:
 				print("[INIT_ACCESS] 所有已知CVE利用失败。")
 				# 在此可以添加钓鱼等其他逻辑
 				# Phishing or other logic could be added here.
-		
+	
 			print("[INIT_ACCESS] --- 初始访问阶段完成 ---")
 			return feedback
 
@@ -1234,7 +1234,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				if creds:
 					feedback['credentials'] = creds
 					self._propagate(host, creds)
-		
+	
 			print(f"[PRIVESC_LATMOVE] --- 在 {host.ip} 上的操作完成 ---")
 			return feedback
 
@@ -1255,7 +1255,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				print("[LATMOVE] 成功从LSASS转储了域管哈希!")
 				return {'VICTIMCORP\\Administrator': 'AAD3B435B51404EEAAD3B435B51404EE:31D6CFE0D16AE931B73C59D7E0C089C0'}
 			return {}
-	
+
 		def _propagate(self, host: Host, creds: Dict[str, str]):
 			"""模拟横向移动 (Simulate lateral movement)"""
 			if 'VICTIMCORP\\Administrator' in creds:
@@ -1294,7 +1294,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			self._covert_exfiltration()
 			print("[EXFIL] --- 数据渗漏阶段完成 ---")
 			return {'exfiltration_complete': True}
-	
+
 		def run_impact(self) -> Dict[str, Any]:
 			"""根据目标执行最终影响 (Execute final impact based on objective)"""
 			objective = self.world_model.target.objective
@@ -1305,7 +1305,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				print("[IMPACT] 正在所有受控主机上执行擦除器模块...")
 			elif objective in [AttackObjective.PERSISTENCE, AttackObjective.DATA_THEFT]:
 				print("[IMPACT] 目标达成。进入休眠模式，清理痕迹并维持最高级别持久化。")
-		
+	
 			print("[IMPACT] --- 最终影响阶段完成 ---")
 			return {'impact_executed': True}
 
@@ -1320,7 +1320,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				print(f"[EXFIL] ...正在发送块 {i*100}/500...")
 				time.sleep(0.2) # 模拟慢速传输
 			print("[EXFIL] 数据渗漏完毕。")
-	
+
 		def check_c2_channel(self):
 			"""模拟C2心跳和跳跃 (Simulate C2 heartbeat and hopping)"""
 			if self.world_model.detection_level > self.current_channel_index:
@@ -1391,11 +1391,11 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 					feedback = self.c2_module.run_exfiltration()
 				elif current_state == SystemState.ACTION_ON_OBJECTIVE:
 					feedback = self.c2_module.run_impact()
-			
+		
 				# 更新ASE并进入下一个状态
 				if feedback:
 					self.ase.update_world_model(feedback)
-			
+		
 				self.ase.decide_next_state()
 				time.sleep(1) # 暂停以便观察
 
@@ -1555,13 +1555,13 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			"""
 			计算一个动作的综合得分。可根据目标进行调整。
 			Calculates a composite score for an action. Can be tuned based on objective.
-		
+	
 			例如，一个追求隐蔽的攻击 (For a stealth-focused attack):
 			score = (success_prob * 1.5) - (risk_score * 2.0) - (time_cost * 0.5)
 			"""
 			metrics = self.action_metrics.get(action_name, [0, 1, 1])
 			success_prob, risk_score, time_cost = metrics
-		
+	
 			# 权重可以根据`attack_objective`动态调整
 			# Weights can be dynamically adjusted based on `attack_objective`
 			stealth_weights = np.array([1.5, -2.0, -0.5])
@@ -1583,7 +1583,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			action_scores = {
 				action: self._calculate_action_score(action) for action in available_actions
 			}
-		
+	
 			best_action = max(action_scores, key=action_scores.get)
 			print(f"[ASE_OPT] 决策分析: {action_scores}")
 			print(f"[ASE_OPT] 最佳选择: {best_action} (得分: {action_scores[best_action]:.2f})")
@@ -1694,7 +1694,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			"""添加一个主机节点 (Add a Host node)"""
 			query = "MERGE (h:Host {ip: $ip}) SET h.os = $os"
 			self._run_query(query, ip=ip, os=os)
-		
+	
 		def add_user_credential(self, username: str, host_ip: str, cred_type: str):
 			"""添加用户凭证，并创建与主机的关系 (Add a user credential and link it to a host)"""
 			query = """
@@ -1752,7 +1752,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			instance_id = f"i-0abcdef{hash(region)}"
 			instance_ip = f"54.12.34.{len(self.active_infra)}"
 			print(f"[C2_MGR] 部署成功。实例ID: {instance_id}, IP: {instance_ip}")
-		
+	
 			infra_details = {"id": instance_id, "ip": instance_ip, "type": "redirector"}
 			self.active_infra[instance_id] = infra_details
 			return infra_details
@@ -1801,7 +1801,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 		max_sleep: int  # 秒 (seconds)
 		working_hours_utc: tuple = (0, 24) # (start_hour, end_hour)
 		traffic_profile: str = "generic_tls" # e.g., 'teams_api', 'o365_graph'
-	
+
 		def get_sleep_time(self) -> int:
 			return random.randint(self.min_sleep, self.max_sleep)
 
@@ -1823,7 +1823,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			if profile_name in PROFILES:
 				print(f"[IMPLANT:{self.host_ip}] 行为剖面已切换为: {profile_name}")
 				self.profile = PROFILES[profile_name]
-		
+	
 		def main_loop(self):
 			"""植入体的主循环 (The main loop of the implant)"""
 			while self.is_running:
@@ -1832,7 +1832,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 					print(f"[IMPLANT:{self.host_ip}] 在工作窗口内，正在执行任务 (模拟流量: {self.profile.traffic_profile})...")
 					# 在此执行C2任务
 					# Execute C2 tasks here
-			
+		
 				sleep_duration = self.profile.get_sleep_time()
 				print(f"[IMPLANT:{self.host_ip}] 任务完成，将休眠 {sleep_duration} 秒。")
 				time.sleep(sleep_duration)
@@ -2005,7 +2005,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				# Exploit: choose the action with the highest Q-value
 				state_actions = self.q_table.loc[state, :]
 				action = np.random.choice(state_actions[state_actions == np.max(state_actions)].index)
-		
+	
 			return action
 
 		def learn(self, state: str, action: str, reward: float, next_state: str):
@@ -2017,14 +2017,14 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			self._check_state_exist(next_state)
 			q_predict = self.q_table.loc[state, action]
 			q_target = reward + self.gamma * self.q_table.loc[next_state, :].max()
-		
+	
 			# 更新Q值 (Update Q-value)
 			self.q_table.loc[state, action] += self.lr * (q_target - q_predict)
 
 			# 衰减探索率 (Decay epsilon)
 			if self.epsilon > self.epsilon_min:
 				self.epsilon *= self.epsilon_decay
-		
+	
 			print(f"[RL_ASE] 学到经验: State({state}) -> Action({action}) -> Reward({reward})")
 	```
 
@@ -2041,14 +2041,14 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 
 	class GeneticToolGenerator:
 		"""使用遗传算法自动生成新的工具链 (Uses genetic algorithms to auto-generate new toolchains)"""
-	
+
 		# 定义基础操作作为“基因” (Define basic operations as "genes")
 		ATTACK_PRIMITIVES = [
 			"read_file('/etc/passwd')", "connect_to('127.0.0.1', 80)", 
 			"write_to_socket(data)", "encrypt_data(data, 'AES')",
 			"copy_file('a', 'b')", "execute_command('ls -la')"
 		]
-	
+
 		def __init__(self, population_size=50, mutation_rate=0.05, generations=100):
 			self.population_size = population_size
 			self.mutation_rate = mutation_rate
@@ -2062,7 +2062,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			"""
 			适应度函数：评估一个工具链的有效性（核心挑战）。
 			Fitness function: evaluates the effectiveness of a toolchain (the core challenge).
-		
+	
 			这需要一个复杂的沙箱环境来实际执行和评估结果。
 			This requires a complex sandbox environment for actual execution and evaluation.
 			"""
@@ -2095,20 +2095,20 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 		def evolve(self) -> list:
 			"""运行完整的进化流程 (Run the full evolutionary process)"""
 			population = [self._create_genome() for _ in range(self.population_size)]
-		
+	
 			for gen in range(self.generations):
 				fittest = self._selection(population)
 				next_generation = fittest
-			
+		
 				while len(next_generation) < self.population_size:
 					parent1, parent2 = random.choices(fittest, k=2)
 					child = self._crossover(parent1, parent2)
 					child = self._mutate(child)
 					next_generation.append(child)
-			
+		
 				population = next_generation
 				print(f"[GA_TOOLGEN] 第 {gen+1} 代完成。最佳适应度: {self._fitness(population[0])}")
-			
+		
 			return sorted(population, key=lambda g: self._fitness(g), reverse=True)[0]
 	```
 
@@ -2146,19 +2146,19 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			Predict new attack "edges" that are most likely to succeed.
 			"""
 			graph_tensor = self._graph_to_tensor(current_graph)
-		
+	
 			# with torch.no_grad():
 			#     # 模型输出所有可能“边”的概率
 			#     # The model outputs probabilities for all possible "edges"
 			#     predictions = self.model(graph_tensor) 
-		
+	
 			# 模拟预测结果 (Simulated prediction results)
 			predictions = [
 				{"source": "User:bob", "relation": "CAN_EXPLOIT", "target": "Service:PrintSpooler", "probability": 0.92},
 				{"source": "Host:WebServer", "relation": "IS_VULNERABLE_TO", "target": "CVE-2023-9999", "probability": 0.88},
 				{"source": "User:alice", "relation": "CAN_IMPERSONATE", "target": "User:svc_account", "probability": 0.75},
 			]
-		
+	
 			print(f"[GNN_MODEL] 预测出 {len(predictions)} 个潜在攻击向量。")
 			return sorted(predictions, key=lambda x: x['probability'], reverse=True)[:top_k]
 	```
@@ -2197,7 +2197,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				{"tx_id": "tx456", "memo": "some other transaction"},
 				{"tx_id": "tx789", "memo": "CHIMERA:EXECUTE:whoami"},
 			]
-		
+	
 			new_instructions = []
 			for tx in mock_transactions:
 				if tx['tx_id'] not in self.processed_tx_ids and tx['memo'].startswith(self.magic_header):
@@ -2205,7 +2205,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 					print(f"[B-C2] 发现新指令: {instruction} (来自交易 {tx['tx_id']})")
 					new_instructions.append(instruction)
 					self.processed_tx_ids.add(tx['tx_id'])
-				
+			
 			return new_instructions
 
 	class IoTPeerNode:
@@ -2271,7 +2271,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 		def _is_in_sandbox(self) -> bool:
 			"""检查是否存在常见的沙箱/虚拟机特征 (Check for common sandbox/VM artifacts)"""
 			print("[PARANOID] 正在进行反沙箱检查...")
-		
+	
 			# 检查1：CPU核心数过少 (Check 1: Too few CPU cores)
 			if psutil.cpu_count() < 2:
 				print("[PARANOID] [!] 检测到CPU核心数过少。")
@@ -2285,7 +2285,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			# 检查3：已知的VM/Sandbox MAC地址前缀 (Check 3: Known VM/Sandbox MAC address prefixes)
 			known_vm_macs = ("08:00:27", "00:05:69", "00:0C:29", "00:1C:14")
 			# ... 此处添加获取本机MAC地址并进行比较的逻辑 ...
-		
+	
 			print("[PARANOID] 未发现明显的沙箱特征。")
 			return False
 
@@ -2300,7 +2300,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			if not self._check_environment_keys():
 				print("[PARANOID] [!] 未在真实目标环境！保持休眠。")
 				return
-		
+	
 			self.payload_activated = True
 			print("[PARANOID] 环境检查通过！核心载荷已激活！")
 			# ... 执行真正的恶意功能 ...
@@ -2505,7 +2505,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			# 1. 模拟API调用获取依赖文件内容
 			# dependencies = self.code_api.get_file_content(target_company_repo, 'requirements.txt').splitlines()
 			dependencies = ["requests==2.25.0", "numpy==1.19.5", "vulnerablelib==1.2.3"]
-		
+	
 			vulnerable_deps = []
 			for dep in dependencies:
 				# 2. 查询漏洞数据库
@@ -2515,7 +2515,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 					print(f"[SUPPLY_CHAIN] [!] 发现漏洞依赖: {dep} ({vuln['cve']})")
 					vulnerable_deps.append(vuln)
 			return vulnerable_deps
-	
+
 		def execute_dependency_confusion(self, internal_package_name: str):
 			"""
 			执行依赖混淆攻击：在公共源上发布一个同名但版本号更高的恶意包。
@@ -2612,10 +2612,10 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			Establishes a financial position before attacking a public company.
 			"""
 			print(f"[ECON_WAR] 计划对 {target_company_ticker} 发动攻击 ({planned_attack})。")
-		
+	
 			# 1. 分析攻击可能造成的股价影响 (Analyze potential stock price impact)
 			# impact_prediction = self.data_provider.predict_impact(target_company_ticker, planned_attack) -> e.g., "-25%"
-		
+	
 			# 2. 建立金融头寸（例如做空） (Establish a financial position, e.g., short selling)
 			print(f"[ECON_WAR] 正在通过加密货币衍生品交易所做空 {target_company_ticker}...")
 			# position_id = self.exchange.open_short_position(ticker=target_company_ticker, leverage=5, amount_btc=2.0)
@@ -2651,7 +2651,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 		def __init__(self, ai_core_components: dict):
 			self.core = ai_core_components # e.g., {"rl_model": ..., "gnn_model": ..., "graph_db_snapshot": ...}
 			print(f"[MIGRATION] 意识迁移模块已初始化。")
-	
+
 		def find_suitable_host(self, compromised_hosts: list) -> dict:
 			"""
 			从已控制的主机列表中，寻找最适合作为新母巢的宿主。
@@ -2667,7 +2667,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 				if score > max_score:
 					max_score = score
 					best_host = host
-		
+	
 			if best_host:
 				print(f"[MIGRATION] 已选择最佳宿主: {best_host['hostname']} (得分: {max_score})")
 			return best_host
@@ -2696,7 +2696,7 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 			print(f"[MIGRATION] 正在向 {target_host['hostname']} ({target_host['ip']}) 迁移...")
 			# 1. 传输shard (Transfer the shard)
 			# self.transfer_module.send(target_host['ip'], shard)
-		
+	
 			# 2. 执行远程引导脚本 (Execute a remote bootstrap script)
 			# command = "/tmp/bootstrap --key <one_time_key> --revive"
 			# self.execution_module.run(target_host['ip'], command)
@@ -2803,3 +2803,64 @@ ASE根据侦察阶段的结果，选择最有可能成功的入口点。
 
 [执行完毕。]
 ```
+
+<br>
+
+<br>
+
+---
+
+
+
+**在信息构成的黑暗森林里，每个人都是带枪的猎人。关注 [@bianzhongren](https://t.me/bianzhongren)，让你从猎物变为顶级的掠食者。**
+
+---
+
+### **📢核心阵地 (Our Channels)**
+
+* **Telegram** (资源发布): [点击加入](https://t.me/zzkdm)
+* **Github** (技术教程): [前往订阅](https://github.com/zzkdm888)
+
+---
+
+### **🔍资源搜索 (Search Resource)**
+
+* **全网资源搜索01**: https://t.me/+PKsmUwoGckMzOTcx
+* **全网资源搜索02**: https://t.me/+4gyZv2aIlZMyYzAx
+* **全网资源搜索03**: https://t.me/+ew6WMPpxLnBlMTlh
+* **全网资源搜索04**: https://t.me/+MzZlIqxT-dkxYjBh
+* **全网资源搜索05**: https://t.me/+1QqSdVTuBKUxNjlh
+* **全网资源搜索06**: https://t.me/+uccuaRM2xXBlYTZh
+* **全网资源搜索07**: https://t.me/+Tu79GRHczbllMmMx
+* **全网资源搜索08**: https://t.me/+igp6CSb59G9mYzQx
+* **全网资源搜索09**: https://t.me/+2iLw70FwfL1lZTgx
+
+---
+
+### **⚠️重要声明 (Disclaimer)**
+
+1. **内容用途:** 本人所有平台发布的内容仅供技术学习与信息交流使用。
+2. **政治中立:** 本人不参与、不讨论任何政治相关话题，请共同维护纯粹的技术交流环境。
+3. **谨防诈骗:** 任何**主动联系你**进行交易或索要信息的人**都是骗子**。请务必提高警惕。
+4. **合法合规:** **严禁利用**本项目的任何内容从事任何违反您所在地法律法规的活动。
+5. **责任豁免:** 对于因使用或滥用本项目内容而导致的任何直接或间接的风险、损失或法律责任，**本人及本项目概不负责**。
+
+---
+
+### **❤️支持项目 (Support This Project)**
+
+如果本项目对您有帮助，您的支持是项目持续维护和发展的最大动力。
+
+* **USDT(trc20)**: TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
+* **TRX**: TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
+* **USDT(ETH)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+* **USDT(BNB)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+* **USDT(Polygen)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+* **TON**: UQC5uthDJDZXwbkxkoHH8RTostxLgFp7e1WINiKTOEkCUqDv
+* **BTC(Taproot)**: bc1prk89wp0x7lvzgdmfmufqqm6h807khezdq6w39e3nxg4yzfskcsfswu9x07
+* **BTC(Lagacy)**: 1NwRQD7yjHMsDsQFCjAYkm5QMeciwEj6q
+* **BTC(Nested SegWit)**: 372tCpTnemNA6rt2BhPqSm9Yp4jtJdUG3m
+* **BTC(Native SegWit)**: bc1qm53xvp5auwr6900228gn77rfureah2tvj86eu9
+* **ETH**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+  <br>
+  **感谢您的每一次支持！ ❤️**
