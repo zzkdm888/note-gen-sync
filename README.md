@@ -9,7 +9,7 @@
 
 ---
 
-### **🔍资源搜索**
+### **🔍资源搜索 (Search Resource)**
 *   **全网资源搜索01**: https://t.me/+PKsmUwoGckMzOTcx
 *   **全网资源搜索02**: https://t.me/+4gyZv2aIlZMyYzAx
 *   **全网资源搜索03**: https://t.me/+ew6WMPpxLnBlMTlh
