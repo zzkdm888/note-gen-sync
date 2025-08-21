@@ -768,7 +768,6 @@ Sweet 和 Searl 都声称，一旦振荡开始 他们从磁铁会的设备中提
 
 这些书籍提到了直流磁“偏置”场的使用 以及施加到磁体上的交流磁场 材料样本以引起各种振荡。这 技术称为 “平行泵送”。在我看来，很明显 交流磁化技术已应用于小样品 磁性材料现在已经很多年了。但是科学界的人 似乎没有在 “大规模” 上应用此类技术 Sweet 和 Searl 也是如此。
 
-
 磁性气泡
 
 一位研究员在 94 年 INE 会议上分发了一篇论文，该论文 被寄给我 （Alan Dubla），其中提到了 Sweet VTA.它谈到了创造磁泡和提取 能量，使用类似于 在 Sweet 的 VTA 上写的文章。我能够重新创建一个 磁性气泡，在小圆形 BaFe 磁体中。我没有 从中提取能量的成功，但它反而 有趣且值得学习一段时间。
@@ -780,7 +779,6 @@ Sweet 和 Searl 都声称，一旦振荡开始 他们从磁铁会的设备中提
 要产生磁性气泡，您需要一些高功率 充磁设备。在图片中，我有一个装有 8000 的盒子 uf 值的电容器、一个用于减慢电流消耗的巨大电阻器和一个 用于开关的 600 安培 SCR。电源是旧的 HP 300 VDC 的
 
 盖子充电，只需按一下按钮，盖子就会 通过磁铁位于中间的 1 欧姆线圈放电。 图片中的小线圈是我用来制作 磁性气泡。大线圈专为 4X6 磁体设计， 但需要更多的动力。排出的焦耳量为 变量。小型 BaFe 磁体需要大约 205 焦耳才能 创建中性/居中磁性气泡。
-
 
 发件人： Jerry Decker （Keelynet） ~ 日期： 2000 年 7 月 29 日星期六 （07：55：22）
 
@@ -831,7 +829,6 @@ Watson 提到了一种激发钡核的方法，这是正确的 在磁铁中。然
 因此，BaFe 激发似乎有多种模式， 并且它们具有不同的效果，这在一定程度上是由 激发-衰变的不同曲线。不过，对于初学者来说， HV 激励会告诉你一些东西......但是没有 Promises，如果您认为您没有看到任何影响:)
 
 格雷厄姆
-
 
 （发件人：Luc Corriveau ~ 收件人：jlnlabs@egroups.com ~ 发送时间：星期二， 2000 年 7 月 25 日 上午 1：39）
 
@@ -1277,25 +1274,17 @@ Overunity 电机的秘密
 注释和参考资料
 
 1. T.E. Bearden 和 Walter Rosenthal，“在可测试的 电磁学、广义相对论和量子学的统一 力学“， 第 26 届社会间能源会议记录 转换工程会议 ，1991 年 8 月 4 日至 9 日， 马萨诸塞州波士顿。
-
 2. Floyd Sweet 和 T.E. Bearden，“利用标量 电磁学利用真空能量“ ，Proceedings of the 第 26 届 Intersociety 能源转换工程研讨会 （IECEC '91），1991 年 8 月 4 日至 9 日，马萨诸塞州波士顿。
-
 3. E.T. Whittaker，“关于 数学物理学“ ，《数学年鉴 》，第 57 卷， 1903 年，第 333-355 页。另见 V.K. Ignatovich，“非凡的 递归关系的能力“， 美国杂志 物理学 ，57（10），1989 年 10 月，第 873-878 页。另见 Richard W. Ziolkowski，“波浪能的局部传输”， Proc. SPIE 第 1061 卷，微波和粒子束源和 定向能量概念，1989 年 1 月，第 396-397 页。
-
 4. 钡化合物中的这种自振荡在 非线性光学，尽管它通常是实验性的 在光频率范围内完成。Sweet美灿烂 了解如何启动这种自振荡或自泵 在 ELF 频率下，例如 60 Hz。
-
 5. 有关失真校正定理的陈述，请参阅 Amnon Yariv， 《光学电子学 》，第三版，Holt， 莱因哈特和温斯顿，纽约，1985 年，第 500-501 页。另见 David M. Pepper，“非线性光学相位共轭”， 光学 《工程》， 第 21 卷第 2 期，1982 年 3 月/4 月，第 156-183 页 光学相位共轭的良好概述。
-
 6. 不久，能量将被定义为某种 次序。所以目前能量的“定义”实际上是说 “秩序是秩序的无序化”。在这种形式中， “定义”中的逻辑矛盾立即 表观。
-
 7. E.T. Whittaker，1903 年，同上。
-
 8. 这是真的，因为 wave 和 antiwave 是相互干扰的。 这种干扰会产生奔腾的波，其瞬时 速度与光速不同。
 
 奔腾的波浪减慢到 0.01 摄氏度，然后向前冲 再次在 100 C 时，然后减速，然后加速，依此类推。其 平均速度为 C。但它的瞬时速度通常是 除了 C 之外的任何事物。参见 William G. Harter， John Evans， Roberto Vega， 和桑福德·威尔逊。“奔腾的海浪及其相对论 属性。 美国物理学杂志 ，53（7），7 月 1985 年，第 671-679 页。
 
 9. 偶尔会有另一位物理学家发现光子 交互实际上是二进制的，我们忽略或丢弃 我们几乎所有测量值的一半。例如，参见 Richard Kidd 等人，“现代光子的进化”， 美国人 物理学杂志 ，57（1），1989 年 1 月，第 27-35 页。另请参阅 R. Chen，〈取消内功〉， 《美国杂志》 物理学 ，49（4），1981 年 4 月，第 372 页。
-
 10. 基本上，这已经被实验证明。例如，当 一个具有相位共轭材料，它可以发射任一光子 （正常波）或反光子（时间倒转或 相位共轭波）。
 
 现在，如果我对牛顿第三定律的起源是正确的 反作用力，则当材料发出时间倒转时 波或反光子，则材料不应后坐力。这样 事实上，已经在非线性光学中进行了实验 实验，以及“莫名其妙地”一个相位共轭镜 材料在发射反光子或相位时不会反冲 共轭波，似乎违反了牛顿第三定律！所以 看来我毕竟是对的。
@@ -1311,7 +1300,6 @@ Overunity 电机的秘密
 然后可以干涉两个标量电磁光束以产生 电磁力场直接位于远处的带电粒子系统中，由 惠特克 1904 年。
 
 13. E.T. Whittaker，1904 年，同上。
-
 14. 在数学上，这些隐藏波可以建模为 超空间波。
 
 汤姆·比尔登/Sweet VTA Development
@@ -1476,3 +1464,64 @@ http://www.panaceauniversity.org/D5.pdf
 ![image.png](https://cdn.jsdelivr.net/gh/zzkdm888/note-gen-image-sync@main/2025-06/190d6a1e-d465-4940-9661-5fcc8d680725.png)
 
 ![image.png](https://cdn.jsdelivr.net/gh/zzkdm888/note-gen-image-sync@main/2025-06/3d010af3-3c9b-48d9-8f97-a7e4067aa71b.png)
+
+<br>
+
+<br>
+
+---
+
+
+
+**在信息构成的黑暗森林里，每个人都是带枪的猎人。关注 [@bianzhongren](https://t.me/bianzhongren)，让你从猎物变为顶级的掠食者。**
+
+---
+
+### **📢核心阵地 (Our Channels)**
+
+* **Telegram** (资源发布): [点击加入](https://t.me/zzkdm)
+* **Github** (技术教程): [前往订阅](https://github.com/zzkdm888)
+
+---
+
+### **🔍资源搜索 (Search Resource)**
+
+* **全网资源搜索01**: https://t.me/+PKsmUwoGckMzOTcx
+* **全网资源搜索02**: https://t.me/+4gyZv2aIlZMyYzAx
+* **全网资源搜索03**: https://t.me/+ew6WMPpxLnBlMTlh
+* **全网资源搜索04**: https://t.me/+MzZlIqxT-dkxYjBh
+* **全网资源搜索05**: https://t.me/+1QqSdVTuBKUxNjlh
+* **全网资源搜索06**: https://t.me/+uccuaRM2xXBlYTZh
+* **全网资源搜索07**: https://t.me/+Tu79GRHczbllMmMx
+* **全网资源搜索08**: https://t.me/+igp6CSb59G9mYzQx
+* **全网资源搜索09**: https://t.me/+2iLw70FwfL1lZTgx
+
+---
+
+### **⚠️重要声明 (Disclaimer)**
+
+1. **内容用途:** 本人所有平台发布的内容仅供技术学习与信息交流使用。
+2. **政治中立:** 本人不参与、不讨论任何政治相关话题，请共同维护纯粹的技术交流环境。
+3. **谨防诈骗:** 任何**主动联系你**进行交易或索要信息的人**都是骗子**。请务必提高警惕。
+4. **合法合规:** **严禁利用**本项目的任何内容从事任何违反您所在地法律法规的活动。
+5. **责任豁免:** 对于因使用或滥用本项目内容而导致的任何直接或间接的风险、损失或法律责任，**本人及本项目概不负责**。
+
+---
+
+### **❤️支持项目 (Support This Project)**
+
+如果本项目对您有帮助，您的支持是项目持续维护和发展的最大动力。
+
+* **USDT(trc20)**: TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
+* **TRX**: TQqxEfc6Ptyo8zJXFfcVLeJ6AUr3gFC9W1
+* **USDT(ETH)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+* **USDT(BNB)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+* **USDT(Polygen)**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+* **TON**: UQC5uthDJDZXwbkxkoHH8RTostxLgFp7e1WINiKTOEkCUqDv
+* **BTC(Taproot)**: bc1prk89wp0x7lvzgdmfmufqqm6h807khezdq6w39e3nxg4yzfskcsfswu9x07
+* **BTC(Lagacy)**: 1NwRQD7yjHMsDsQFCjAYkm5QMeciwEj6q
+* **BTC(Nested SegWit)**: 372tCpTnemNA6rt2BhPqSm9Yp4jtJdUG3m
+* **BTC(Native SegWit)**: bc1qm53xvp5auwr6900228gn77rfureah2tvj86eu9
+* **ETH**: 0x59568a972e5c4e9aedea0ed8b4a8259a9e9953b7
+  <br>
+  **感谢您的每一次支持！ ❤️**
